@@ -18,19 +18,19 @@ echo '<br>';
 
 $num1 = 2;
 $num2 = 3;
-$operator = '*';
+$operator = 'Multiplication';
 
 switch ($operator) {
-    case '+':
+    case 'Addition':
         echo $num1 + $num2;
         break;
-    case '-':
+    case 'Subtraction':
         echo $num1 - $num2;
         break;
-    case '*':
+    case 'Multiplication':
         echo $num1 * $num2;
         break;
-    case '/':
+    case 'Division':
         echo $num1 / $num2;
         break;
     default:
