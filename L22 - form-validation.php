@@ -73,10 +73,10 @@ if (isset($_POST['signup'])) {
     <input type="text" placeholder="Your email" name="yourEmail" value="<?= $yourEmail ?? null ?>">
     <span style="color: red"><?= $errEmail ?? null ?></span>
     <br><br>
-    <input type="password" placeholder="Your password" name="yourPassword" value="<?= $yourPassword ?? null ?>">
+    <input type="password" placeholder="Your password" name="yourPassword" value="<?= $yourPassword ?? null ?>" id="pass">
     <span style="color: red"><?= $errPassword ?? null ?></span>
     <br><br>
-    <input type="password" placeholder="Confirm password" name="confirmPassword" value="<?= $confirmPassword ?? null ?>">
+    <input type="password" placeholder="Confirm password" name="confirmPassword" value="<?= $confirmPassword ?? null ?>" id="cpass">
     <br><br>
     <label for="">Gender</label>
     <label for="genderMale">
@@ -114,6 +114,8 @@ if (isset($_POST['signup'])) {
     </select>
     <span style="color: red"><?= $errCountry ?? null ?></span>
     <br><br>
+    <input type="checkbox" id="showPass"> Show Password
+    <br><br>
     <button type="submit" name="signup">Submit</button>
 </form>
 
@@ -127,3 +129,19 @@ if (isset($crrName) && isset($crrEmail) && isset($crrPassword) && isset($crrGend
     echo "Country: " . $crrCountry . "<br>";
 }
 ?>
+
+<script>
+    const showPass = document.getElementById('showPass');
+    const pass = document.getElementById('pass');
+    const cpass = document.getElementById('cpass');
+
+    showPass.addEventListener('click', () => {
+        if (showPass.checked) {
+            pass.setAttribute('type', 'text');
+            cpass.setAttribute('type', 'text');
+        } else {
+            pass.setAttribute('type', 'password');
+            cpass.setAttribute('type', 'password');
+        }
+    })
+</script>
