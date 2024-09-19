@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    >h1{
+        color: #f00;
+        text-align: center;
+        padding: 30px;
+    }
+}
