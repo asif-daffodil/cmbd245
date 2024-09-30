@@ -25,3 +25,7 @@ $mydob = new DateTime('1987-9-10');
 $now = new DateTime();
 $diff = $now->diff($mydob);
 echo $diff->format('I am %Y years, %m months, %d days old.');
+
+// print php version
+echo "<br>";
+echo phpversion();
