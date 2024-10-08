@@ -2,11 +2,19 @@
 // country inline array
 $countries = ["Bangladesh", "India", "Pakistan", "Sri Lanka", "Nepal", "Bhutan", "Maldives", "Afghanistan", "Myanmar", "Thailand", "Vietnam", "Laos", "Cambodia", "Malaysia", "Singapore", "Indonesia", "Philippines", "Brunei", "East Timor", "China", "Mongolia", "North Korea", "South Korea", "Japan", "Taiwan", "Hong Kong", "Macau", "Russia", "Kazakhstan", "Uzbekistan", "Turkmenistan", "Tajikistan", "Kyrgyzstan", "Iran", "Iraq", "Syria", "Jordan", "Lebanon"];
 
+function safeData($data)
+{
+    $data = htmlspecialchars($data);
+    $data = trim($data);
+    $data = stripslashes($data);
+    return $data;
+}
+
 if (isset($_POST['signup'])) {
-    $yourName = $_POST['yourName'];
-    $yourEmail = $_POST['yourEmail'];
-    $yourPassword = $_POST['yourPassword'];
-    $confirmPassword = $_POST['confirmPassword'];
+    $yourName = safeData($_POST['yourName']);
+    $yourEmail = safeData($_POST['yourEmail']);
+    $yourPassword = safeData($_POST['yourPassword']);
+    $confirmPassword = safeData($_POST['confirmPassword']);
     $gender = isset($_POST['gender']) ? $_POST['gender'] : null;
     $skills = isset($_POST['skills']) ? $_POST['skills'] : [];
     $country = $_POST['country'];
