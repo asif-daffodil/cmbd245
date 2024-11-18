@@ -1,4 +1,9 @@
 <?php
+// use namespace student
+include('./L37 - oop2.php');
+
+use student\studentInfo3;
+
 class studentInfo
 {
     public $name = "Md Alamin";
