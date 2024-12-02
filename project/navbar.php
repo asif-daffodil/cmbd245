@@ -28,12 +28,12 @@
                 <?php } else { ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <?php echo $_SESSION['user']['name']; ?>
+                            <?php echo $_SESSION['user']['fname']; ?>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Update Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Profile Picture</a></li>
-                            <li><a class="dropdown-item" href="#">Change Password</a></li>
+                            <li><a class="dropdown-item" href="./update-profile.php">Update Profile</a></li>
+                            <li><a class="dropdown-item" href="./profile-picture.php">Profile Picture</a></li>
+                            <li><a class="dropdown-item" href="./change-password.php">Change Password</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

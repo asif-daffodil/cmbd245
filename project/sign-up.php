@@ -1,5 +1,9 @@
 <?php
 require_once './header.php';
+if (isset($_SESSION['user'])) {
+    echo "<script>window.location.href = 'index.php';</script>";
+    exit();
+}
 if (isset($_POST['signup123'])) {
     $fname = cleanData($_POST['fname']);
     $lname = cleanData($_POST['lname']);
@@ -65,7 +69,8 @@ if (isset($_POST['signup123'])) {
         $password = password_hash($crrPassword, PASSWORD_DEFAULT);
         $sql = "INSERT INTO `users` (`fname`, `lname`, `email`, `password`, `gender`) VALUES ('$crrFname', '$crrLname', '$crrEmail', '$password', '$crrGender')";
         if (mysqli_query($conn, $sql)) {
-            echo "<script>toastr.success('New account created successfully');setTimeout(() => location.href='./sign-in.php', 2000)</script>";
+            echo "<script>toastr.success('New account created successfully');</script>";
+            header("refresh:2;url=sign-in.php");
         } else {
             echo "<script>toastr.error('Some went wrong')</script>";
         }
@@ -133,6 +138,9 @@ if (isset($_POST['signup123'])) {
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary" name="signup123">Sign Up</button>
+                </div>
+                <div class="mb-3">
+                    already have an account? <a href="sign-in.php">Sign-in</a>
                 </div>
             </form>
         </div>
