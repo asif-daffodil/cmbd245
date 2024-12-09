@@ -37,6 +37,9 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
+                            <?php if ($_SESSION['user']['role'] == 'admin') { ?>
+                                <li><a class="dropdown-item" href="./admin/dashboard.php">Dashboard</a></li>
+                            <?php } ?>
                             <li><a class="dropdown-item" href="./logout.php">Logout</a></li>
                         </ul>
                     </li>
