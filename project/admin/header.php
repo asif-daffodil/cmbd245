@@ -1,6 +1,11 @@
 <?php
+session_start();
 $pageName = basename($_SERVER['PHP_SELF']);
 $conn = mysqli_connect('localhost', 'root', '', 'project245');
+if (!isset($_SESSION['user'])) {
+    echo "<script>window.location.href = '../sign-in.php';</script>";
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
